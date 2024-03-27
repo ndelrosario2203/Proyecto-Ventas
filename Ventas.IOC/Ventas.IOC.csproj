@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ventas.Api\Ventas.Api.csproj" />
+    <ProjectReference Include="..\Ventas.AppService\Ventas.AppService.csproj" />
+    <ProjectReference Include="..\Ventas.ConceptualModel\Ventas.ConceptualModel.csproj" />
+    <ProjectReference Include="..\Ventas.Domain\Ventas.Domain.csproj" />
+    <ProjectReference Include="..\Ventas.Infraestructure\Ventas.Infraestructure.csproj" />
+  </ItemGroup>
+
+</Project>

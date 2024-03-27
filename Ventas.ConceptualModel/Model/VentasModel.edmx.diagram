@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76b1ef4cdc734d2886f9e003d8c84fd0" Name="Diagram1" >
+        <EntityTypeShape EntityType="VentasModel.Categoria" Width="1.5" PointX="5.75" PointY="4" />
+        <EntityTypeShape EntityType="VentasModel.Configuracion" Width="1.5" PointX="9.75" PointY="9" />
+        <EntityTypeShape EntityType="VentasModel.DetalleVenta" Width="1.5" PointX="7.5" PointY="10.75" />
+        <EntityTypeShape EntityType="VentasModel.Menu" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="VentasModel.Negocio" Width="1.5" PointX="9.75" PointY="12" />
+        <EntityTypeShape EntityType="VentasModel.NumeroCorrelativo" Width="1.5" PointX="10.75" PointY="3" />
+        <EntityTypeShape EntityType="VentasModel.Producto" Width="1.5" PointX="8" PointY="3.25" />
+        <EntityTypeShape EntityType="VentasModel.Rol" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="VentasModel.RolMenu" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="VentasModel.sysdiagram" Width="1.5" PointX="10.75" PointY="6" />
+        <EntityTypeShape EntityType="VentasModel.TipoDocumentoVenta" Width="1.5" PointX="3" PointY="15.625" />
+        <EntityTypeShape EntityType="VentasModel.Usuario" Width="1.5" PointX="3" PointY="9.875" />
+        <EntityTypeShape EntityType="VentasModel.Venta" Width="1.5" PointX="5.25" PointY="10.25" />
+        <AssociationConnector Association="VentasModel.FK__Producto__IdCate__5EBF139D" />
+        <AssociationConnector Association="VentasModel.FK__DetalleVe__IdVen__5CD6CB2B" />
+        <AssociationConnector Association="VentasModel.FK__Menu__IdMenuPadr__5DCAEF64" />
+        <AssociationConnector Association="VentasModel.FK__RolMenu__IdMenu__5FB337D6" />
+        <AssociationConnector Association="VentasModel.FK__RolMenu__IdRol__60A75C0F" />
+        <AssociationConnector Association="VentasModel.FK__Usuario__IdRol__619B8048" />
+        <AssociationConnector Association="VentasModel.FK__Venta__IdTipoDoc__628FA481" />
+        <AssociationConnector Association="VentasModel.FK__Venta__IdUsuario__6383C8BA" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

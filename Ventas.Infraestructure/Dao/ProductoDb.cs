@@ -11,22 +11,37 @@ namespace Ventas.Infraestructure.Dao
 {
     public class ProductoDb : IProductoDb
     {
-        public bool Exists(string Name)
+        public Task<int> Commit()
         {
             throw new NotImplementedException();
         }
 
-        public List<Producto> GetAll()
+        public bool Exists(Func<Producto, bool> filter)
         {
             throw new NotImplementedException();
         }
 
-        public Producto GetById(int id)
+        public Task<List<Producto>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public DataResult Save(Producto entity)
+        public Task<Producto> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Producto>> GetTentitiesWithFilters(Func<Producto, bool> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DataResult> Save(Producto entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DataResult> Update(Producto entity)
         {
             throw new NotImplementedException();
         }

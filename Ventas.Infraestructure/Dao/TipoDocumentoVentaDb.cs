@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ventas.Domain.Entities;
+﻿using Ventas.Domain.Entities;
 using Ventas.Infraestructure.Core;
 using Ventas.Infraestructure.Interfaces;
 
@@ -11,22 +6,37 @@ namespace Ventas.Infraestructure.Dao
 {
     public class TipoDocumentoVentaDb : ITipoDocumentoVentaDb
     {
-        public bool Exists(string Name)
+        public Task<int> Commit()
         {
             throw new NotImplementedException();
         }
 
-        public List<TipoDocumentoVenta> GetAll()
+        public bool Exists(Func<TipoDocumentoVenta, bool> filter)
         {
             throw new NotImplementedException();
         }
 
-        public TipoDocumentoVenta GetById(int id)
+        public Task<List<TipoDocumentoVenta>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public DataResult Save(TipoDocumentoVenta entity)
+        public Task<TipoDocumentoVenta> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<TipoDocumentoVenta>> GetTentitiesWithFilters(Func<TipoDocumentoVenta, bool> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DataResult> Save(TipoDocumentoVenta entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DataResult> Update(TipoDocumentoVenta entity)
         {
             throw new NotImplementedException();
         }

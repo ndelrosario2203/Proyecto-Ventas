@@ -6,22 +6,37 @@ namespace Ventas.Infraestructure.Dao
 {
     public class RolDb : IRolDb
     {
-        public bool Exists(string Name)
+        public Task<int> Commit()
         {
             throw new NotImplementedException();
         }
 
-        public List<Rol> GetAll()
+        public bool Exists(Func<Rol, bool> filter)
         {
             throw new NotImplementedException();
         }
 
-        public Rol GetById(int id)
+        public Task<List<Rol>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public DataResult Save(Rol entity)
+        public Task<Rol> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Rol>> GetTentitiesWithFilters(Func<Rol, bool> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DataResult> Save(Rol entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DataResult> Update(Rol entity)
         {
             throw new NotImplementedException();
         }
