@@ -1,49 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Logging;
 using Ventas.Domain.Entities;
-using Ventas.Infraestructure.Core;
+using Ventas.Infraestructure.Context;
 using Ventas.Infraestructure.Interfaces;
+using Ventas.Infraestructure.Model;
 
 namespace Ventas.Infraestructure.Dao
 {
-    public class ProductoDb : IProductoDb
+    public class ProductoDb : DaoBase<Producto>, IProductoDb
     {
-        public Task<int> Commit()
+        private readonly VentasContext context;
+        private readonly ILogger<VentaDb> logger;
+
+        public ProductoDb(VentasContext context, ILogger<VentaDb> logger) : base(context)
         {
-            throw new NotImplementedException();
+            this.context = context;
+            this.logger = logger;
         }
 
-        public bool Exists(Func<Producto, bool> filter)
+        public List<ProductosPorCategoria> ObtenerProducosPorCategoria(int category)
         {
-            throw new NotImplementedException();
-        }
+            List<ProductosPorCategoria> Productos = new List<ProductosPorCategoria>();
 
-        public Task<List<Producto>> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                Productos = (from producto in context.productos
+                                join categoria in context.categorias
+                                on producto.IdCategoria equals categoria.IdCategoria
+                                where producto.Eliminado == false
+                                && categoria.Eliminado == false
+                                && categoria.IdCategoria == category
+                                orderby producto.FechaRegistro descending
+                                select new ProductosPorCategoria()
+                                {
+                                    ProductoId = producto.IdProducto,
+                                    CodigoBarra = producto.CodigoBarra,
+                                    Marca = producto.Marca,
+                                    Stock = producto.Stock,
+                                    NombreCategoria = categoria.Descripcion
 
-        public Task<Producto> GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<Producto>> GetTentitiesWithFilters(Func<Producto, bool> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<DataResult> Save(Producto entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<DataResult> Update(Producto entity)
-        {
-            throw new NotImplementedException();
+                                }).ToList();
+                return Productos;
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error cargando la información.", ex.ToString());
+                throw;
+            }
         }
     }
 }
